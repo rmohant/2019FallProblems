@@ -28,6 +28,24 @@ bool checkOrder(int * arr, int size)
 #ifdef TEST_SORT
 void ssort(int * arr, int size)
 {
+  int ind;
+  int j;
+  int min;
+  for (ind = 0; ind < size - 1; ++ ind)
+    {
+	min = ind;
+      for (j= ind + 1; j < size, ++ j)
+        {
+	  if (arr[j] < arr [min])
+	    {
+              min = j;
+	    }
+        }
+	swap(&arr[min], &arr[ind]);
+    }
+	
+	
+	
   // This function has two levels of for
   // The first level specifies which element in the array
   // The second level finds the smallest element among the unsorted
